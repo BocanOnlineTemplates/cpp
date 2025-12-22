@@ -34,45 +34,41 @@ classDiagram
 ### Directory Structure
 
 ```
-.
-├── .github                 # github-specific documentation 
-├── blog                    # alternate docs location for public publishing
-├── CMakeLists.txt          # top-level CMakeLists.txt
-├── CMakePresets.json       # defines debug and release configurations
-├── CONTRIBUTING.md         # top-level developer specific documentation
-├── docs                    # detailed wiki documentation
-├── LICENSE.md              # top-level license
-├── README.md               # top-level project documentation
-├── .gitignore              # default .gitignore for c project
-├── .tmuxp.yaml             # tmux config file (requires tmuxp to use)
-├── scripts                 # contain helper scripts
-│   ├── build-debug.sh      # builds debug config to build-debug/
-│   ├── build-release.sh    # builds release config to build-release/
-│   ├── clean.sh            # removes build-debug/ and build-release/ directories
-│   ├── run-debug.sh        # runs the debug config executable
-│   ├── run-release.sh      # runs the release config executable
-│   └── run-test.sh         # runs test suite using ctest
-├── Template-App            # application-specific code to generate executable
-│   ├── CMakeLists.txt      # links to static library, generates executable
-│   ├── src                 # application code
-│   │   └── main.c          # application entry point
-│   └── vendor              # third-party code used in the application
-├── Template-Core           # reusable code to generate a static library
-│   ├── CMakeLists.txt      # generates a static library and unit tests
-│   ├── src                 # library code
-│   │   ├── ModuleA.c       # represents a module implementation
-│   │   ├── ModuleA.h       # represents a module definition
-│   │   └── ModuleA.test.c  # unit test for a module
-│   └── vendor              # third-party code used in the library
-├── tests                   # integration tests, regression tests, etc.
-└── vendor                  # third-party code used in both core and app
+├./
+├── CMakeLists.txt
+├── CMakePresets.json
+├── LICENSE.md
+├── README.md
+├── docs/
+├── scripts/
+│   ├── build-clean.sh*
+│   ├── build-debug.sh*
+│   ├── build-release.sh*
+│   ├── run-debug.sh*
+│   ├── run-release.sh*
+│   └── run-test.sh*
+├── source/
+│   ├── Template-App/
+│   │   ├── CMakeLists.txt
+│   │   ├── source/
+│   │   │   └── main.cpp
+│   │   └── vendor/
+│   └── Template-Core/
+│       ├── CMakeLists.txt
+│       ├── source/
+│       │   ├── Module.cpp
+│       │   ├── Module.hpp
+│       │   └── Module.test.cpp
+│       └── vendor/
+├── test/
+└── vendor/
 ```
 
 ---
 
 ## Using this Template
 
-To begin using this template, the most straightforward method would to use git
+To begin using this template, the most straightforward method would be to use git
 clone to bring the repo contents to your local machine. From there you can test 
 the build system, edit the files to match your project name, and start 
 developing your project. If you need more than one "Core" or more than one
